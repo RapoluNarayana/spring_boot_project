@@ -34,7 +34,7 @@ public class EmployeeController {
     //To get all records in the table
     @GetMapping("/all")
     public ResponseEntity<List<Employee>> allEmployees(){
-        return new ResponseEntity<>(employeeService.getAllEmployees(),HttpStatus.OK);
+        return ResponseEntity.ok(employeeService.getAllEmployees());
     }
 
     //To get the employee records by using Employee ID
