@@ -48,7 +48,8 @@ public class EmployeeController {
     @PostMapping("update")
     public ResponseEntity<String> updateEmployee(@RequestBody Employee employee){
         employeeService.updateEmployee(employee);
-        return new ResponseEntity<>(HttpStatus.OK);
+        //return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.ok("Updated");
     }
 
     //To delete the records in the table
