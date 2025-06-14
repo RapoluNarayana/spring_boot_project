@@ -56,7 +56,9 @@ public class EmployeeController {
     @DeleteMapping("{employeeId}")
     public ResponseEntity<String> removeOneEmployee(@PathVariable int employeeId){
         employeeService.removeById(employeeId);
-        return new ResponseEntity<>(HttpStatus.OK);
+
+        //return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.ok("Deleted");
     }
 
     //To get the employee records by using Employee Name
