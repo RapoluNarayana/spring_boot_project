@@ -40,7 +40,8 @@ public class EmployeeController {
     //To get the employee records by using Employee ID
     @GetMapping("{employeeId}")
     public ResponseEntity<Optional<Employee>> getOneEmployeeById(@PathVariable("employeeId") int employeeId){
-        return new ResponseEntity<>(employeeService.fetchById(employeeId),HttpStatus.OK);
+        //return new ResponseEntity<>(employeeService.fetchById(employeeId),HttpStatus.OK);
+        return ResponseEntity.ok(employeeService.fetchById(employeeId));
     }
 
     //To update the records in the table
