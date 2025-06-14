@@ -64,7 +64,8 @@ public class EmployeeController {
     //To get the employee records by using Employee Name
    @GetMapping("EmployeeName/{employeeName}")
     public ResponseEntity<Employee> getOneEmployeeByName(@PathVariable String employeeName) throws NameNotFoundException {
-        return new ResponseEntity<>(employeeService.getEmployName(employeeName),HttpStatus.OK);
+        //return new ResponseEntity<>(employeeService.getEmployName(employeeName),HttpStatus.OK);
+        return ResponseEntity.ok(employeeService.getEmployName(employeeName));
     }
 
     //To get the employee records by pages
